@@ -1,0 +1,14 @@
+////
+/// Typography
+/// @author Don-Pechot (https://github.com/Don-Pechot)
+////
+
+// fonts:
+@include font-face('MuseoSans', '#{$project-font}/100/MuseoSansRounded-100', 100, normal, woff ttf eot);
+@include font-face('MuseoSans', '#{$project-font}/300/MuseoSansRounded-300', 300, normal, woff ttf eot);
+@include font-face('MuseoSans', '#{$project-font}/500/MuseoSansRounded-500', 500, normal, woff ttf eot);
+@include font-face('MuseoSans', '#{$project-font}/700/MuseoSansRounded-700', 700, normal, woff ttf eot);
+@include font-face('MuseoSans', '#{$project-font}/900/MuseoSansRounded-900', 900, normal, woff ttf eot);
+@include font-face('MuseoSans', '#{$project-font}/1000/MuseoSansRounded-1000', 1000, normal, woff ttf eot);
+
+$main-font: 'MuseoSans', sans-serif;

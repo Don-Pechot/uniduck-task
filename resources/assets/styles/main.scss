@@ -1,3 +1,4 @@
+//import abstracts
 @import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixins";
@@ -14,6 +15,9 @@
 // @import "~some-node-module";
 
 /** Import base */
+@import "base/reset";
+@import "base/grid";
+@import "base/typography";
 @import "base/global";
 
 /** Import components */
