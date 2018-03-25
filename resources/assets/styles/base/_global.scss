@@ -1,6 +1,16 @@
 //global:
-html,
 body {
   overflow-x: hidden;
   font-family: $main-font;
+  color: $uniduck-text;
+}
+
+a {
+  @include global-hover;
+
+  color: $uniduck-purple;
+
+  &:hover {
+    color: $uniduck-purple-light;
+  }
 }

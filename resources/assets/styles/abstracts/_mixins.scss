@@ -43,19 +43,12 @@
 
   @include rhythm($fs-base, $lh-base);
 
-  @include g-state(medium) {
-    $fs-medium: map-deep-get($map-name, 'medium', 'fs');
-    $lh-medium: map-deep-get($map-name, 'medium', 'lh');
-
-    @include rhythm($fs-medium, $lh-medium);
-  }
-
-  @include g-state(xlarge) {
-    $fs-xlarge: map-deep-get($map-name, 'xlarge', 'fs');
-    $lh-xlarge: map-deep-get($map-name, 'xlarge', 'lh');
-
-    @include rhythm($fs-xlarge, $lh-xlarge);
-  }
+  // @include g-state(medium) {
+  //   $fs-medium: map-deep-get($map-name, 'medium', 'fs');
+  //   $lh-medium: map-deep-get($map-name, 'medium', 'lh');
+  //
+  //   @include rhythm($fs-medium, $lh-medium);
+  // }
 }
 
 @mixin global-transition {
@@ -63,7 +56,7 @@
 }
 
 @mixin global-hover {
-  transition: color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 @mixin clearfix {

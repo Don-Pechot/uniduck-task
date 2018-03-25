@@ -12,3 +12,9 @@
 @include font-face('MuseoSans', '#{$project-font}/1000/MuseoSansRounded-1000', 1000, normal, woff ttf eot);
 
 $main-font: 'MuseoSans', sans-serif;
+
+//utils:
+.t-uppercase,
+main .t-uppercase {
+  text-transform: uppercase;
+}

@@ -1,7 +1,152 @@
+.banner {
+  padding: rem(30) 0;
+}
+
 .banner .nav li {
   @extend .nav-item;
 }
 
-.banner .nav a {
-  @extend .nav-link;
+.header-logo {
+  @include gridle(3);
+
+  @include g-state(large) {
+    @include gridle(6);
+  }
+}
+
+.header-main-menu {
+  @include gridle(9);
+
+  @include g-state(large) {
+    @include gridle(6);
+  }
+
+  position: relative;
+}
+
+.header-logo img {
+  max-width: rem(172);
+  height: auto;
+  margin: rem(16) 0;
+}
+
+.menu-button {
+  @include global-hover;
+
+  padding: 0;
+  border-radius: rem(4);
+  margin-bottom: rem(20);
+
+  @include g-state(medium) {
+    margin-right: rem(25);
+    margin-bottom: 0;
+
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    @include font-sizer($fslh-menu);
+
+    font-weight: 500;
+    color: $white;
+    padding: rem(20) rem(30);
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+.menu-button--icon-ios,
+.menu-button--icon-unicorn {
+  a {
+    position: relative;
+
+    @include g-state(medium) {
+      padding-left: rem(60);
+    }
+  }
+}
+
+.menu-button--icon-ios a::before {
+  @include g-state(medium) {
+    position: absolute;
+    left: rem(30);
+    top: rem(17);
+    font-size: rem(20);
+    font-family: 'Unicoons', sans-serif !important;
+    content: '\e900';
+    color: $white;
+  }
+}
+
+.menu-button--icon-unicorn a::before {
+  @include g-state(medium) {
+    position: absolute;
+    left: rem(30);
+    top: rem(18);
+    font-size: rem(20);
+    font-family: 'Unicoons', sans-serif !important;
+    content: '\e908';
+    color: $white;
+  }
+}
+
+.menu-button.button--transparent {
+  a {
+    color: $uniduck-text;
+  }
+
+  &:hover {
+    a {
+      color: $uniduck-purple;
+    }
+  }
+}
+
+//mobile
+.header-main-menu__nav {
+  display: none;
+  max-width: rem(240);
+  position: absolute;
+  top: rem(50);
+  right: 0;
+
+  &.isVisibleMobile {
+    display: block;
+  }
+
+  @include g-state(medium) {
+    display: block;
+    max-width: rem(9999);
+    position: static;
+  }
+
+  .nav {
+    justify-content: flex-end;
+    background-color: $white;
+
+    @include g-state(medium) {
+      justify-content: flex-start;
+      background-color: transparent;
+    }
+  }
+}
+
+.header-main-menu__toggle {
+  float: right;
+  display: inline-block;
+  margin: rem(16) 0;
+
+  @include g-state(medium) {
+    display: none;
+  }
+
+  span {
+    font-size: rem(22);
+
+    &::before {
+      color: $uniduck-purple;
+    }
+  }
 }

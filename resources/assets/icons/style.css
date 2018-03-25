@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Unicoons';
-  src:  url('fonts/Unicoons.eot?dhrlan');
-  src:  url('fonts/Unicoons.eot?dhrlan#iefix') format('embedded-opentype'),
-    url('fonts/Unicoons.ttf?dhrlan') format('truetype'),
-    url('fonts/Unicoons.woff?dhrlan') format('woff'),
-    url('fonts/Unicoons.svg?dhrlan#Unicoons') format('svg');
+  src:  url('fonts/Unicoons.eot?qk8ktx');
+  src:  url('fonts/Unicoons.eot?qk8ktx#iefix') format('embedded-opentype'),
+    url('fonts/Unicoons.ttf?qk8ktx') format('truetype'),
+    url('fonts/Unicoons.woff?qk8ktx') format('woff'),
+    url('fonts/Unicoons.svg?qk8ktx#Unicoons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -63,4 +63,7 @@
 .udck-ic-writer:before {
   content: "\e909";
   color: #000;
+}
+.udck-menu:before {
+  content: "\e9bd";
 }

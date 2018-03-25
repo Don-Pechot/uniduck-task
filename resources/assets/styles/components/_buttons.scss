@@ -1,0 +1,37 @@
+.button {
+  @include global-hover;
+
+  padding: rem(20) rem(30);
+  border-radius: rem(10);
+  color: white;
+
+  a {
+    padding: 0;
+  }
+}
+
+.button--transparent {
+  background-color: transparent;
+  color: $uniduck-text;
+
+  &:hover {
+    color: $uniduck-purple;
+  }
+}
+
+.button--purple {
+  background-color: $uniduck-purple;
+
+  &:hover {
+    background-color: $uniduck-purple-light;
+    color: $uniduck-purple;
+  }
+}
+
+.button--gray {
+  background-color: $uniduck-background;
+
+  &:hover {
+    background-color: $uniduck-purple-light;
+  }
+}
