@@ -13,10 +13,13 @@
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
 // @import "~some-node-module";
+@import "~coffeekraken-gridle/flex";
+@import "../icons/style.css";
 
 /** Import base */
 @import "base/reset";
 @import "base/grid";
+@import "base/responsive";
 @import "base/typography";
 @import "base/global";
 

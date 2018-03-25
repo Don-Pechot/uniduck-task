@@ -1,1 +1,41 @@
-//grid:
+////
+/// Grid
+/// @author Don-Pechot (https://github.com/Don-Pechot)
+////
+
+// default settings
+$settings : (
+  context : 12, 			// number of columns in your grid
+  column-width : null, 	// by default it's percentage based depending on the context but you can specify a column width yourself
+  gutter-width : 30px,	// size of the gutters
+  gutter-height : 0, 		// size of top and bottom gutters
+  gutter-top 	  : 0, 		// size of top gutter
+  gutter-bottom : 0, 		// size of bottom gutter
+  gutter-left   : 15px, 	// size of left gutter
+  gutter-right  : 15px, 	// size of right gutter
+  direction : ltr, 		// direction
+  dir-attribute : false, 	// if need to generate support for dir="rtl" in order to set part of layout direction
+  states-classes : false, // if we need to generate the states classes
+  name-multiplicator : 1, // if 5, generate gr-5, gr-10, etc...
+  classes-prefix : '' 	// the prefix used for all classes
+);
+
+@include g-setup($settings);
+
+// queries
+@include g-register-state(small, (
+  min-width: 481px
+));
+@include g-register-state(medium, (
+  min-width: 768px
+));
+@include g-register-state(large, (
+  min-width: 1201px
+));
+@include g-register-column(fifth, 1, 5);
+
+//generate classes
+@include g-classes();
+
+// init
+@include g-init();

@@ -1,0 +1,23 @@
+////
+/// Responsive
+/// @author Don-Pechot (https://github.com/Don-Pechot)
+////
+
+.container {
+  max-width: 100%;
+  padding: 0 rem(20px);
+  margin: 0 auto;
+
+  @include g-state(small) {
+    max-width: rem(440px);
+    padding: 0;
+  }
+
+  @include g-state(medium) {
+    max-width: rem(707px);
+  }
+
+  @include g-state(large) {
+    max-width: rem(1140px);
+  }
+}
