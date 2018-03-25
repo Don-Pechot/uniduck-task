@@ -1,0 +1,104 @@
+////
+/// Mixins
+/// @author Don-Pechot (https://github.com/Don-Pechot)
+////
+/// Center vertically when flex is not an option, parent needs to have
+/// 'position: relative' set
+/// @access public
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/// Font size / Line height shorthand, with fallback for old browsers
+/// taken from: https://codepen.io/vajkri/pen/QwvLgg
+/// @access public
+@mixin font-size($sizeValue: 18) {
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.0625 * $sizeValue) + rem;
+}
+
+@mixin line-height($heightValue: 32) {
+  line-height: $heightValue + px; //fallback for old browsers
+  line-height: (0.0625 * $heightValue) + rem;
+}
+
+@mixin rhythm($sizeValue: 18, $heightValue: 32) {
+  @include font-size($sizeValue);
+  @include line-height($heightValue);
+}
+/// Grabs font size / line height from font map and prepares
+/// for usage with 'rythm' mixin, depends on 'map-deep-get'
+/// function
+/// @access public
+/// @param {Map} - name of font map to use
+/// @require {function} map-deep-get <https://css-tricks.com/snippets/sass/deep-getset-maps/>
+/// @require {mixin} rhythm
+/// @output Responsive font-size & line height with fallback in px
+@mixin font-sizer($map-name: $tm-base) {
+  $fs-base: map-deep-get($map-name, 'base', 'fs');
+  $lh-base: map-deep-get($map-name, 'base', 'lh');
+
+  @include rhythm($fs-base, $lh-base);
+
+  @include g-state(medium) {
+    $fs-medium: map-deep-get($map-name, 'medium', 'fs');
+    $lh-medium: map-deep-get($map-name, 'medium', 'lh');
+
+    @include rhythm($fs-medium, $lh-medium);
+  }
+
+  @include g-state(xlarge) {
+    $fs-xlarge: map-deep-get($map-name, 'xlarge', 'fs');
+    $lh-xlarge: map-deep-get($map-name, 'xlarge', 'lh');
+
+    @include rhythm($fs-xlarge, $lh-xlarge);
+  }
+}
+
+@mixin global-transition {
+  transition: all 0.4s ease-in-out;
+}
+
+@mixin global-hover {
+  transition: color 0.2s ease-in-out;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin trbl-zero {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+//styling placeholder text
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}

@@ -1,0 +1,67 @@
+////
+/// Variables
+/// @author Don-Pechot <https://github.com/Don-Pechot>
+////
+
+//paths:
+$images: '../images';
+
+/// baseSize variable (almost constant :), used for calculations,
+/// mainly rem conversion
+/// @access public
+/// @type String
+$baseSize: 16px;
+
+/* FONT MAPS */
+
+// $tm-base: (
+//   xlarge: (
+//     fs: 18,
+//     lh: 32
+//   ),
+//   medium: (
+//     fs: 16,
+//     lh: 26
+//   ),
+//   base: (
+//     fs: 16,
+//     lh: 20
+//   )
+// );
+
+/// Z-indexes map, gathering all Z layers of the application
+/// @access private
+/// @type Map
+/// @prop {String} key - Layer’s name
+/// @prop {Number} value - Z value mapped to the key
+$z-indexes: (
+  'modal'            : 5000,
+  'dropdown'         : 4000,
+  'overlay'          : 3000,
+  'default'          : 1,
+  'below'            : -1,
+);
+
+/// project colors, using definition -> application workflow,
+/// meaning colors are first defined with their descriptive
+/// names (hint: http://chir.ag/projects/name-that-color)
+/// which are then assigned to different resusable components,
+/// ie 'footer-gray', 'border-blue' etc...
+/// @access public
+/// @type String
+$cerise    : rbga(220, 75, 163, 1); //#DC4BA3
+$cherub    : rgba(242, 192, 222, 1); //#F2C0DE
+$emperor   : rgba(85, 85, 85, 1); //#555555
+$dusty-gray: rgba(153, 153, 153, 1); //#999999
+$nobel     : rgba(179, 179, 179, 1); //#B3B3B3
+$gallery   : rgba(240, 240, 240, 1); //#F0F0F0
+$alto      : rgba(216, 216, 216, 1); //#D8D8D8
+
+// colors applied:
+$uniduck-purple          : $cerise; //brand purple
+$uniduck-purple-light    : $cherub; //brand purple light
+$uniduck-text            : $emperor; // text gray
+$uniduck-text-light      : $dusty-gray; // text light gray
+$uniduck-background      : $nobel; // bacground gray
+$uniduck-background-light: $gallery; // background light gray
+$uniduck-border          : $alto; // border gray

@@ -1,0 +1,43 @@
+////
+/// Functions
+/// @author Don-Pechot <https://github.com/Don-Pechot>
+////
+/// Get a z-index value from a layer name
+/// @access public
+/// @param {String} $layer - Layer’s name
+/// @return {Number}
+/// @require $z-indexes
+@function z($layer) {
+  @return map-get($z-indexes, $layer);
+}
+/// Convert baseSize (unit value variable) into rem
+/// @access public
+/// @param {Number} $size - size in pixels to convert
+/// @return {String}
+/// @require $baseSize
+@function rem($size) {
+  @if (unitless($size)) {
+    $size: $size * 1px;
+  }
+
+  @if (unitless($baseSize)) {
+    $baseSize: $baseSize * 1px;
+  }
+  $remSize: $size / $baseSize;
+
+  @return #{$remSize}rem;
+}
+/// Map deep get
+/// @author Hugo Giraudel
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} - Desired value
+/// @link https://css-tricks.com/snippets/sass/deep-getset-maps/
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
