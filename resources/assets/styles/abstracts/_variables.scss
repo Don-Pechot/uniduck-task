@@ -16,6 +16,20 @@ $baseSize: 16px;
 
 /* FONT MAPS */
 
+$fslh-heading1: (
+  base: (
+    fs: 42,
+    lh: 42
+  )
+);
+
+$fslh-base: (
+  base: (
+    fs: 16,
+    lh: 28
+  )
+);
+
 $fslh-menu: (
   base: (
     fs: 14,

@@ -1,3 +1,19 @@
+//general
+input[type="text"],
+input[type="email"],
+input[type="submit"] {
+  font-size: rem(16);
+  line-height: 1;
+  padding: rem(20) rem(15);
+  appearance: none;
+  border: 1px solid $uniduck-border;
+  max-width: 100%;
+
+  @include placeholder {
+    color: $uniduck-text-light;
+  }
+}
+
 /** Search form */
 .search-form {
   @extend .form-inline;

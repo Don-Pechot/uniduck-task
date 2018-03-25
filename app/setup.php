@@ -83,8 +83,16 @@ add_action('widgets_init', function () {
         'id'            => 'sidebar-primary'
     ] + $config);
     register_sidebar([
-        'name'          => __('Footer', 'sage'),
-        'id'            => 'sidebar-footer'
+        'name'          => __('Footer - Newsletter', 'sage'),
+        'id'            => 'newsletter-footer'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer - Copyright', 'sage'),
+        'id'            => 'copy-footer'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer - Social', 'sage'),
+        'id'            => 'social-footer'
     ] + $config);
 });
 

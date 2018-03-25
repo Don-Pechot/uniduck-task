@@ -13,8 +13,22 @@
 
 $main-font: 'MuseoSans', sans-serif;
 
+.h1 {
+  @include font-sizer($fslh-heading1);
+
+  font-weight: 100;
+}
+
 //utils:
 .t-uppercase,
 main .t-uppercase {
   text-transform: uppercase;
+}
+
+.c-light {
+  color: $uniduck-text-light;
+}
+
+.c-purple {
+  color: $uniduck-purple;
 }

@@ -1,0 +1,47 @@
+.content-info {
+  padding: rem(50) 0 0;
+  color: $uniduck-text-light;
+}
+
+.real-footer {
+  border-top: 1px solid $uniduck-border;
+  background-color: $uniduck-background-light;
+  padding: rem(70) 0 rem(80);
+}
+
+.footer-copyright {
+  @include gridle(12);
+
+  @include g-state(medium) {
+    @include gridle(4 push 1);
+  }
+
+  .footer-logo img {
+    max-width: rem(172);
+    height: auto;
+    margin-bottom: rem(20);
+  }
+}
+
+.footer-social {
+  @include gridle(12);
+
+  text-align: left;
+
+  @include g-state(medium) {
+    @include gridle(4 push 3);
+  }
+
+  .widget p {
+    text-align: left;
+    margin-bottom: rem(10);
+
+    @include g-state(medium) {
+      text-align: right;
+    }
+
+    span::before {
+      color: $uniduck-purple;
+    }
+  }
+}
