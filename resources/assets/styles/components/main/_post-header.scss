@@ -2,6 +2,12 @@
   position: relative;
 }
 
+.post-header__featured-image {
+  img {
+    width: 100%;
+  }
+}
+
 .post-header__meta-overlay {
   @include trbl-zero;
 

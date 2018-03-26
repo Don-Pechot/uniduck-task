@@ -1,0 +1,67 @@
+.entry-content__featured {
+  @include gridle(10 push 1);
+  @include font-sizer($fslh-featured);
+
+  font-weight: 100;
+  text-align: center;
+  padding: rem(60) 0 rem(30);
+  color: $uniduck-purple;
+}
+
+.entry-content__main {
+  @include gridle(12);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @include gridle(12);
+
+    @include g-state(medium) {
+      @include gridle(6 push 3);
+    }
+  }
+
+  h1,
+  h2 {
+    margin: rem(42) 0 rem(24);
+
+    @include g-state(medium) {
+      margin: rem(56) 0 rem(32);
+    }
+  }
+
+  h2 {
+    font-weight: 500;
+  }
+
+  p {
+    @include font-sizer($fslh-base);
+
+    margin-bottom: rem(24);
+    font-weight: 500;
+
+    @include g-state(medium) {
+      margin-bottom: rem(32);
+    }
+  }
+
+  figure {
+    @include gridle(12);
+
+    @include g-state(medium) {
+      @include gridle(8);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    figcaption {
+      text-align: center;
+    }
+  }
+}
