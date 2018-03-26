@@ -28,6 +28,9 @@
 @import "components/forms";
 @import "components/wp-classes";
 @import "components/newsletter-form";
+@import "components/main/post-header";
+
+/** Import layouts */
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";

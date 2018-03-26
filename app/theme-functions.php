@@ -2,11 +2,15 @@
 
 namespace App;
 
-//support custom logo
+/**
+ * support custom logo
+ */
 add_theme_support( 'custom-logo' );
 
-// use tgm-plugin activation class
-// (https://github.com/TGMPA/TGM-Plugin-Activation)
+/**
+ * use tgm-plugin activation class
+ * https://github.com/TGMPA/TGM-Plugin-Activation)
+ */
 require_once('helpers/class-tgm-plugin-activation.php');
 
 add_action( 'tgmpa_register', __NAMESPACE__ . '\uniduck_register_required_plugins' );
@@ -24,6 +28,16 @@ function uniduck_register_required_plugins() {
         array(
             'name'   => 'Contact Form 7',
             'slug'   => 'contact-form-7',
+            required => true,
+        ),
+        array(
+            'name'   => 'Thumbnail Upscale',
+            'slug'   => 'thumbnail-upscale',
+            required => true,
+        ),
+        array(
+            'name'   => 'Force Regenerate Thumbnails',
+            'slug'   => 'force-regenerate-thumbnails',
             required => true,
         ),
 	);
@@ -52,5 +66,15 @@ function uniduck_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
+
+/**
+ * custom image sizes
+ */
+add_action( 'after_setup_theme', __NAMESPACE__ . '\custom_image_sizes' );
+function custom_image_sizes() {
+    add_image_size( 'featured-single-post', 1440, 500, array('center', 'top') );
+    add_image_size( 'featured-grid', 720, 576, array('center', 'center') );
+}
+
 
 ?>
