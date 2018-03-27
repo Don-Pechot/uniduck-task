@@ -1,0 +1,39 @@
+.undck-qoute {
+  width: 100%;
+  display: none;
+
+  @include g-state(medium) {
+    display: inline;
+  }
+}
+
+.undck-qoute--left {
+  @include g-state(medium) {
+    float: left;
+    margin-left: -50%;
+    padding-left: rem(70);
+  }
+}
+
+.undck-qoute--right {
+  @include g-state(medium) {
+    float: right;
+    margin-right: -50%;
+  }
+}
+
+.undck-qoute__content {
+  display: inline-block;
+  font-weight: 100;
+  color: $uniduck-purple;
+
+  @include g-state(medium) {
+    .undck-qoute--left & {
+      padding-right: rem(70);
+    }
+
+    .undck-qoute--right & {
+      padding-left: rem(70);
+    }
+  }
+}

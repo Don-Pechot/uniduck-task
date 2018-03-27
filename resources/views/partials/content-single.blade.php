@@ -2,7 +2,10 @@
   <header class="post-header">
     <div class="post-header__featured-image">
       @if (get_the_post_thumbnail_url())
-        <img src="{!! get_the_post_thumbnail_url($post->ID, 'featured-single-post') !!}" alt="{{ the_title() }} - Featured Image">
+        <div class="post-header__featured-image-src"
+              style="background-image: url({!! get_the_post_thumbnail_url($post->ID, 'featured-single-post') !!})">
+        </div>
+        {{-- <img src="{!! get_the_post_thumbnail_url($post->ID, 'featured-single-post') !!}" alt="{{ the_title() }} - Featured Image"> --}}
       @endif
     </div>
     <div class="post-header__meta-overlay">

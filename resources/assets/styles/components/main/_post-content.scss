@@ -11,6 +11,8 @@
 .entry-content__main {
   @include gridle(12);
 
+  text-align: center;
+
   h1,
   h2,
   h3,
@@ -18,10 +20,17 @@
   h5,
   h6,
   p {
-    @include gridle(12);
+    // @include gridle(12);
+    //
+    // @include g-state(medium) {
+    //   @include gridle(6 push 3);
+    // }
+    text-align: left;
+    width: 100%;
 
     @include g-state(medium) {
-      @include gridle(6 push 3);
+      width: 50%;
+      display: inline-block;
     }
   }
 
@@ -50,10 +59,11 @@
   }
 
   figure {
-    @include gridle(12);
+    width: 100%;
 
     @include g-state(medium) {
-      @include gridle(8);
+      width: 83.3333%;
+      display: inline-block;
     }
 
     img {

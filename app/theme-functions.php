@@ -76,5 +76,23 @@ function custom_image_sizes() {
     add_image_size( 'featured-grid', 720, 576, array('center', 'center') );
 }
 
+/**
+ * shortcodes
+ */
+add_shortcode('undck-qoute', __NAMESPACE__ . '\undck_qoute');
+function undck_qoute( $atts, $content = null ) {
+    $a = shortcode_atts( array(
+        'align' => 'left',
+        'margin-top' => '20px',
+    ), $atts );
+
+    ob_start();
+    ?>
+    <span class="undck-qoute undck-qoute--<?php echo $a['align'] ?>">
+        <span class="h2 undck-qoute__content" style="margin-top: <?php echo $a['margin-top'] ?>;"><?php echo $content; ?></span>
+    </span>
+    <?php
+    return ob_get_clean();
+}
 
 ?>

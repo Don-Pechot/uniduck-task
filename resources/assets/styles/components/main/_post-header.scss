@@ -3,9 +3,18 @@
 }
 
 .post-header__featured-image {
-  img {
-    width: 100%;
+  width: 100%;
+  height: calc(100vw / 1.5);
+
+  @include g-state(medium) {
+    height: calc(100vw / 2.88);
   }
+}
+
+.post-header__featured-image-src {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 .post-header__meta-overlay {
