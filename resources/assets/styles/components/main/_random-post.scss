@@ -1,0 +1,51 @@
+.random-post {
+  .random-post__heading {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: rem(80) 0 rem(40);
+    color: $uniduck-purple;
+
+    @include g-state(large) {
+      margin: rem(80) 0;
+    }
+  }
+
+  .random-post__content,
+  .random-post__title,
+  .random-post__excerpt {
+    width: 100%;
+  }
+
+  .random-post__excerpt {
+    a {
+      display: block;
+      margin-top: rem(30);
+    }
+  }
+}
+
+.random-post__thumbnail {
+  @include gridle(12);
+
+  margin-bottom: rem(30);
+
+  @include g-state(large) {
+    @include gridle(6);
+
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.random-post__content {
+  @include gridle(12);
+
+  @include g-state(large) {
+    @include gridle(6);
+  }
+}

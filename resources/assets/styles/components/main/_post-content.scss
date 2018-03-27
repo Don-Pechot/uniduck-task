@@ -19,7 +19,9 @@
   h4,
   h5,
   h6,
-  p {
+  p,
+  .post-tags,
+  .random-post {
     // @include gridle(12);
     //
     // @include g-state(medium) {

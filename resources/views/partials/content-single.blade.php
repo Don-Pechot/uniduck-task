@@ -1,3 +1,8 @@
+<?php
+$post_tags = get_the_tags($post->ID);
+$random_post = get_posts(array('orderby' => 'rand', 'posts_per_page' => 1, 'post__not_in' => get_option( 'sticky_posts' )));
+?>
+
 <article @php(post_class())>
   <header class="post-header">
     <div class="post-header__featured-image">
@@ -38,6 +43,27 @@
         <div class="entry-content__main">
           <div class="row-align-around">
             @php(the_content())
+
+            @if ($post_tags)
+              @include('partials.post-tags', [
+                'tags' => $post_tags
+              ])
+            @endif
+
+            {{-- {{ var_dump($random_post) }} --}}
+            <div class="random-post">
+              <h4 class="h4 random-post__heading">More magic</h4>
+              <div class="row">
+                <div class="random-post__thumbnail">
+                  <img src="{!! get_the_post_thumbnail_url($random_post[0]->ID, 'featured-grid') !!}" alt="Next post thumb">
+                </div>
+
+                <div class="random-post__content">
+                  <h4 class="h4 random-post__title">{{ $random_post[0]->post_title }}</h4>
+                  <p class="random-post__excerpt">{!! get_the_excerpt($random_post[0]->ID) !!}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -45,7 +71,7 @@
 
   </div>
   <footer>
-    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
+
   </footer>
   {{-- @php(comments_template('/partials/comments.blade.php')) --}}
 </article>
