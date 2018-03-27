@@ -4,7 +4,7 @@
 
 .post-header__featured-image {
   width: 100%;
-  height: calc(100vw / 1.5);
+  height: calc(100vw / 1.15);
 
   @include g-state(medium) {
     height: calc(100vw / 2.88);

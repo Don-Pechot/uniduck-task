@@ -74,6 +74,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\custom_image_sizes' );
 function custom_image_sizes() {
     add_image_size( 'featured-single-post', 1440, 500, array('center', 'top') );
     add_image_size( 'featured-grid', 720, 576, array('center', 'center') );
+    add_image_size( 'youtube-shortcode', 845, 480, array('center', 'center') );
 }
 
 /**
@@ -91,6 +92,34 @@ function undck_qoute( $atts, $content = null ) {
     <span class="undck-qoute undck-qoute--<?php echo $a['align'] ?>">
         <span class="h2 undck-qoute__content" style="margin-top: <?php echo $a['margin-top'] ?>;"><?php echo $content; ?></span>
     </span>
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode('undck-video', __NAMESPACE__ . '\undck_video');
+function undck_video( $atts ) {
+    $a = shortcode_atts( array(
+        'code' => '',
+        'thumb' => '',
+        'caption' => '',
+    ), $atts );
+
+    $uniq = uniqid('yt-', false);
+
+    ob_start();
+    ?>
+    <div class="video-block">
+        <div class="video">
+            <div class="video__play">
+                <i><span class="udck-ic-play"></span></i>
+            </div>
+            <img class="video__thumbnail" src="<?php echo $a['thumb']; ?>" data-video="<?php echo $a['code'] ?>" data-uniq="<?php echo $uniq; ?>" id="youtubeUrlKeeper">
+            <div class="youtube-api" id="<?php echo $uniq ?>"></div>
+        </div>
+        <div class="video-caption">
+            <?php echo $a['caption']; ?>
+        </div>
+    </div>
     <?php
     return ob_get_clean();
 }

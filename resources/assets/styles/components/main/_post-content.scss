@@ -68,9 +68,13 @@
 
     img {
       width: 100%;
+      margin-bottom: rem(20);
     }
 
     figcaption {
+      @include font-sizer($fslh-menu);
+
+      color: $uniduck-text-light;
       text-align: center;
     }
   }

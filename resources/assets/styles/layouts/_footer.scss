@@ -12,8 +12,12 @@
 .footer-copyright {
   @include gridle(12);
 
+  margin-bottom: rem(40);
+
   @include g-state(medium) {
     @include gridle(4 push 1);
+
+    margin-bottom: 0;
   }
 
   .footer-logo img {
