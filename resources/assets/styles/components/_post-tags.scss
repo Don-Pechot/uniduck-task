@@ -1,8 +1,10 @@
 .post-tag {
   @include font-sizer($fslh-menu);
 
+  display: inline-block;
   padding: rem(4) rem(8);
   margin-right: rem(8);
+  margin-bottom: rem(10);
   color: $uniduck-text;
   background-color: $uniduck-background-light;
 

@@ -1,18 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
-
-  @if (!have_posts())
-    <div class="alert alert-warning">
-      {{  __('Sorry, no results were found.', 'sage') }}
+  <div class="container">
+    <div class="row">
+      @include('partials.page-header')
     </div>
-    {!! get_search_form(false) !!}
-  @endif
 
-  @while(have_posts()) @php(the_post())
-    @include('partials.content-search')
-  @endwhile
+    @if (!have_posts())
+      <div class="alert alert-warning">
+        {{  __('Sorry, no results were found.', 'sage') }}
+      </div>
+      {!! get_search_form(false) !!}
+    @endif
 
-  {!! get_the_posts_navigation() !!}
+    <div class="post-grid">
+      <div class="row">
+        @while(have_posts()) @php(the_post())
+          @include('partials.content')
+        @endwhile
+      </div>
+    </div>
+
+
+    @if (function_exists(wp_pagenavi()))
+      {{ wp_pagenavi() }}
+    @endif
+  </div>
+
+
 @endsection

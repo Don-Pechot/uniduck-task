@@ -1,0 +1,47 @@
+.page-header {
+  width: 100%;
+  padding: rem(40) 0;
+  text-align: center;
+
+  @include g-state(medium) {
+    padding: rem(85) 0 rem(105);
+  }
+
+  h1 {
+    color: $uniduck-purple;
+    font-weight: 100;
+    margin-bottom: rem(34);
+  }
+}
+
+.page-header .search-form {
+  justify-content: center;
+
+  label {
+    position: relative;
+    margin-left: rem(70);
+
+    &::before {
+      position: absolute;
+      top: rem(7);
+      left: rem(10);
+      font-family: 'Unicoons', sans-serif;
+      content: '\e906';
+      font-size: rem(20);
+    }
+  }
+
+  .search-submit {
+    display: none;
+  }
+
+  .search-field {
+    border: 0;
+    padding: rem(10) rem(50);
+
+    &:focus {
+      border-color: transparentize($purple, 0.5);
+      box-shadow: none;
+    }
+  }
+}

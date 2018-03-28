@@ -40,6 +40,10 @@ function uniduck_register_required_plugins() {
             'slug'   => 'force-regenerate-thumbnails',
             required => true,
         ),
+        array(
+            'name' => 'WP Pagenavi',
+            'slug' => 'wp-pagenavi',
+        ),
 	);
 
 	/*
