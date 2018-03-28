@@ -83,6 +83,12 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
   * `devUrl` should reflect your local development hostname
   * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/sage` for non-[Bedrock](https://roots.io/bedrock/) installs)
 
+### Required plugins
+
+After activating the theme in wp-admin, a required plugins notice
+will pop up. Just install and activate what's required.
+
+
 ### Build commands
 
 * `yarn run start` — Compile assets when file changes are made, start Browsersync session
